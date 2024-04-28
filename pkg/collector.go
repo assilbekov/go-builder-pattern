@@ -10,10 +10,10 @@ type Collector interface {
 	SetBrand()
 	SetMemory()
 	SetGraphicCard()
-	GetComputer()
+	GetComputer() *Computer
 }
 
-func GetCollector(collectorType string) *Collector {
+func GetCollector(collectorType string) Collector {
 	switch collectorType {
 	case AsusCollectorType:
 		return &AsusCollector{}
