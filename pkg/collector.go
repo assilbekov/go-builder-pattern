@@ -13,12 +13,12 @@ type Collector interface {
 	GetComputer()
 }
 
-func GetCollector(collectorType string) Collector {
+func GetCollector(collectorType string) *Collector {
 	switch collectorType {
 	case AsusCollectorType:
-		//return &AsusCollector{}
+		return &AsusCollector{}
 	case MsiCollectorType:
-		//return &MsiCollector{}
+		return &MSICollector{}
 	default:
 		return nil
 	}
